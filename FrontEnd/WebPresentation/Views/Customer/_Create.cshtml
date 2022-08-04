@@ -1,0 +1,100 @@
+﻿@model CustomerDto
+
+
+
+
+@*<div class="form-horizontal" style="min-height: 440px;" id="job-div">
+    <form id="employee-contract-form">
+        <input type="hidden" value="@Context.Request.Query["customerId"].ToString()" name="customerId" />
+        <div class="form-horizontal">
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.FirstName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", autocomplete = "off", placeholder = @Html.DisplayNameFor(a => a.FirstName) })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.LastName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", autocomplete = "off", placeholder = @Html.DisplayNameFor(a => a.LastName) })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.DateOfBirth, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBox(nameof(Model.DateOfBirth), new { @class = "form-control", autocomplete = "off", data_type = "datetime", data_inputmask_inputformat = "yyyy/mm/dd", dir = "ltr", style = "text-align:center;", placeholder = @Html.DisplayNameFor(a => a.DateOfBirth) })
+                    @Html.ValidationMessageFor(x => x.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.PhoneNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", autocomplete = "off", placeholder = @Html.DisplayNameFor(a => a.PhoneNumber) })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", autocomplete = "off", data_type = "email", placeholder = @Html.DisplayNameFor(a => a.Email), })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.BankAccountNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.BankAccountNumber, new { @class = "form-control", autocomplete = "off", placeholder = @Html.DisplayNameFor(a => a.BankAccountNumber) })
+                    @Html.ValidationMessageFor(x => x.BankAccountNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <hr />
+
+    <div class="form-horizontal action-content">
+
+    </div>
+</div>*@
+
+
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="@nameof(CustomerDto.FirstName)" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="@nameof(Customer.FirstName)" name="@nameof(Customer.FirstName)" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@nameof(Customer.LastName)" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="@nameof(Customer.LastName)" name="@nameof(Customer.LastName)" placeholder="Last Name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="@nameof(Customer.DateOfBirth)" class="col-sm-2 control-label">Birth Date</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="@nameof(Customer.DateOfBirth)" name="@nameof(Customer.DateOfBirth)" placeholder="Birth date">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="@nameof(Customer.Email)" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="@nameof(Customer.Email)" name="@nameof(Customer.Email)" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@nameof(Customer.PhoneNumber)" class="col-sm-2 control-label">Phone Number</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="@nameof(Customer.PhoneNumber)" name="@nameof(Customer.PhoneNumber)" placeholder=" phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@nameof(Customer.BankAccountNumber)" class="col-sm-2 control-label">Bank AccountNumber</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="@nameof(Customer.BankAccountNumber)" name="@nameof(Customer.BankAccountNumber)" placeholder="Bank AccountNumber">
+        </div>
+    </div>
+
+</form>

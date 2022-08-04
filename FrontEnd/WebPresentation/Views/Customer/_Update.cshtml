@@ -1,0 +1,60 @@
+﻿@model CustomerDto
+
+
+<form class="form-horizontal">
+    <div class="form-group">
+        @*<label for="@nameof(Model.FirstName)" class="col-sm-2 control-label">First Name</label>*@
+        @*<div class="col-sm-10">
+            <input type="text" class="form-control" id="@nameof(Model.FirstName)" name="@nameof(Model.FirstName)" placeholder="First Name">
+        </div>*@
+        <div class="form-group">
+
+
+
+            <input type="hidden" name="Id" id="Id" value="@Model.Id" />
+
+            <label class="col-md-2 control-label">@Html.DisplayNameFor(a => a.FirstName)</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control has-feedback" })
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">@Html.DisplayNameFor(a => a.LastName)</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(a => a.LastName, new { @class = "form-control has-feedback" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">@Html.DisplayNameFor(a => a.DateOfBirth)</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(a => a.DateOfBirth.Date, new { @data_inputmask_inputformat = "dd/mm/yyyy", @class = "form-control has-feedback" })
+                    @Html.ValidationMessageFor(x => x.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">@Html.DisplayNameFor(a => a.Email)</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(a => a.Email, new { @class = "form-control has-feedback" })
+                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">@Html.DisplayNameFor(a => a.PhoneNumber)</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control has-feedback" })
+                            @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">@Html.DisplayNameFor(a => a.BankAccountNumber)</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(a => a.BankAccountNumber, new { @class = "form-control has-feedback" })
+                                @Html.ValidationMessageFor(x => x.BankAccountNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+</form>

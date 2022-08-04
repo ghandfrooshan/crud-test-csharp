@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CustomerDto>
+@{
+    ViewData["Title"] = "Customer Page";
+    var rowNumber = 1;
+}
+
+
+
+<div>
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption ">
+                <span class="caption-subject bold uppercase font-dark">Customers</span>
+
+            </div>
+            <div class="actions ">
+                <a class="btn btn-circle btn-icon-only btn-default" href="#" onclick="LoadCreateForm()">
+                    <i class="icon-plus"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date Of Birth </th>
+                        <th>PhoneNumber </th>
+                        <th>Email </th>
+                        <th>Bank AccountNumber </th>
+                        <th>Operations </th>
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@(rowNumber++)</td>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.DateOfBirth.Year-@item.DateOfBirth.Month-@item.DateOfBirth.Day</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.Email</td>
+                            <td>@item.BankAccountNumber</td>
+                            <td>
+                                <i class="fa fa-trash button" onclick="DeleteCustomer(@item.Id) " title="Delete" data-toggle="tooltip"> </i>
+                                <i class="fa fa-pencil button" onclick="UpdateCustomer(@item.Id)" title="Edit" data-toggle="tooltip">  </i>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <script asp-append-version="true" src="~/Script/Customer.js"></script>
+   

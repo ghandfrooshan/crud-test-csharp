@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework.DependencyInjection\Framework.DependencyInjection.csproj" />
+    <ProjectReference Include="..\ApplicationService\CustomerContext.ApplicationService\CustomerContext.ApplicationService.csproj" />
+    <ProjectReference Include="..\CustomerContext.Resources\CustomerContext.Resources.csproj" />
+    <ProjectReference Include="..\Domain\CustomerContext.Domain.Services\CustomerContext.Domain.Services.csproj" />
+    <ProjectReference Include="..\Domain\CustomerContext.Domain\CustomerContext.Domain.csproj" />
+    <ProjectReference Include="..\Facade\CustomerContext.Facade.Contracts\CustomerContext.Facade.Contracts.csproj" />
+    <ProjectReference Include="..\Facade\CustomerContext.Facade\CustomerContext.Facade.csproj" />
+    <ProjectReference Include="..\Infrastructure\CustomerContext.Infrastructure.Persistence\CustomerContext.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

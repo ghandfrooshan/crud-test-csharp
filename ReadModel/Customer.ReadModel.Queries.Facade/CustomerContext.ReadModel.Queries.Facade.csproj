@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.Facade\Framework.Facade.csproj" />
+    <ProjectReference Include="..\..\Framework\Framework.Mapper\Framework.Mapper.csproj" />
+    <ProjectReference Include="..\Customer.ReadModel.Context\CustomerContext.ReadModel.Context.csproj" />
+    <ProjectReference Include="..\Customer.ReadModel.Queries.Contracts\CustomerContext.ReadModel.Queries.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
