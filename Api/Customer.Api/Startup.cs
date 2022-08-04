@@ -32,28 +32,7 @@ namespace Customer.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        //{
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //        app.UseSwagger();
-        //        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Customer.Api v1"));
-        //    }
-
-        //    app.UseRouting();
-
-        //    app.UseAuthorization();
-
-        //    app.UseEndpoints(endpoints =>
-        //    {
-        //        endpoints.MapControllers();
-        //    });
-        //}
+      
 
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,18 +40,22 @@ namespace Customer.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
                 
                 app.UseExceptionHandler("/Home/Error");
-                //changed place of migration
-                var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
-                var context = serviceScope.ServiceProvider.GetService<IDbContext>();
-                context.Migrate();
+                
+             
             }
 
-            //app.ConfigureErrorHandlingMiddleware();
+
+
+            var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            var context = serviceScope.ServiceProvider.GetService<IDbContext>();
+            context.Migrate();
+   
             app.UseCors("CrossDomainPolicy");
 
 
@@ -96,16 +79,7 @@ namespace Customer.Api
             app.UseMvc();
         }
 
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-
-        //    services.AddControllers();
-        //    services.AddSwaggerGen(c =>
-        //    {
-        //        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Customer.Api", Version = "v1" });
-
-        //    });
-        //}
+   
         public void ConfigureServices(IServiceCollection services)
         {
             var assemblyHelper = new AssemblyHelper(nameof(CustomerContext));
@@ -116,7 +90,7 @@ namespace Customer.Api
             var mvcBuilder = services.AddMvc(option =>
             {
                 option.EnableEndpointRouting = false;
-                //option.Filters.Add(new ActiveUserFilter());
+             
             })
                 .AddNewtonsoftJson(o =>
                 {

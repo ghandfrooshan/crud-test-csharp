@@ -30,7 +30,7 @@ namespace CustomerContext.Domain.Test.Customers
             private string lastName = "Ghandfrooshan";
             private DateTime dateOfBirth = new DateTime(1988, 01, 01);
             private string phoneNum = "+989364306439";
-            private string accountNum = "+989364306439";
+            private string accountNum = "1233";
 
 
             [TestInitialize]
@@ -116,11 +116,7 @@ namespace CustomerContext.Domain.Test.Customers
 
 
             {
-                //if (iban != null)
-                //{
-                //    validatorMock.Setup(z => z.IsIbanValid(iban.Trim().ToUpper())).Returns(true);
-                //    validatorMock.Setup(z => z.IsIbanValid(iban)).Returns(true);
-                //}
+             
 
                 return new Customer(idGeneratorMock.Object, phoneNumberIsValidChecker, emailIsValidChecker, emailIsUniqueCheckerMock.Object, customerIsUniqueCheckerMock.Object,
                  firstName, lastName, dateOfBirth, phoneNumber, email, bankAccountNumber);

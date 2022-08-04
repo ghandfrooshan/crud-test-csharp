@@ -73,9 +73,7 @@ namespace CustomerContext.Domain.Customers
                 throw new FieldIsRequiredException();
 
 
-            //var regexPattern = @"";
-
-            //if (!Regex.IsMatch(email, regexPattern))
+            
             if(!emailIsValidChecker.IsValid(email))
 
                 throw new EmailFormatIsNotValidException();
